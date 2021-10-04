@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th></th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in current %}
+                <tr>
+                    <td>{{row.symbol}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.shares}}</td>
+                    <td>{{row.price}}</td>
+                    <td>{{row.total}}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td>CASH</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{cashrow[0].cash}}</td>
+            </tr>
+            <!-- TODO: Loop through the database entries to display them in this table -->
+        </tbody>
+    </table>
+{% endblock %}
